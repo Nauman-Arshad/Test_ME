@@ -73,6 +73,10 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
 
     // For Static Website Cauching in Netlify Deployment; for S3 Instance see Doc.
-    'gatsby-plugin-netlify-cache'
+    'gatsby-plugin-netlify-cache',
+
+
+    // Plugins for the Blog
+    `gatsby-plugin-sass`,
   ],
 }
