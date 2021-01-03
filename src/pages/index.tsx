@@ -7,7 +7,7 @@ export default function Home() {
   <Layout>
     <h1>Hello Guys</h1>
     <h2>I am Akif and I am a full-stack-developer in making.</h2>
-    <p>Want to hire me soon? <Link to="/contact">Contact me here.</Link> </p>
+    <p>Need a Developer? <Link to="/contact">Contact me.</Link> </p>
   </Layout>
   )
 }

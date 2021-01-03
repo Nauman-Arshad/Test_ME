@@ -1,8 +1,11 @@
 module.exports = {
+  siteMetadata: {
+    title: 'Full-Stack Bootcamp',
+    author: 'Rao Akif'
+  },
   plugins: [
 
     // TYPESCRIPT
-
     {
       // Gatsby Plugin Typescript
       resolve: `gatsby-plugin-typescript`,
