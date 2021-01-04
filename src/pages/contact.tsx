@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 
 
-export default function Contact() {
+export default function ContactPage() {
   return (
     <Layout>
       <h1>Contact</h1>
