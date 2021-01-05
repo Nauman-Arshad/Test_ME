@@ -107,5 +107,14 @@ module.exports = {
 
     // Plugins for the Blog
     `gatsby-plugin-sass`,
+
+    
+    { // Gatsby Source Contentful
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
   ],
 }
