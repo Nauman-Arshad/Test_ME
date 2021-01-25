@@ -53,6 +53,7 @@ module.exports = {
         description: `The application does cool things and makes your life better.`,
         lang: `en`,
         display: `standalone`,
+        icon: `src/images/favicon.png`,
         icons: [
           {
             src: `/src/images/favicon.png`,
