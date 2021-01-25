@@ -19,7 +19,7 @@ function registerServiceWorker() {
         console.log(
           `Service Worker registration complete, scope: '${registration.scope}'`
         )
-        requestNotificationPermission().then(r => console.log(r))
+        requestNotificationPermission().then(Notification.requestPermission)
       })
       .catch(error =>
         console.log(`Service Worker registration failed with error: '${error}'`)
@@ -32,11 +32,11 @@ function registerServiceWorker() {
 registerServiceWorker()
 
 self.addEventListener("install", function() {
-  console.log("Install!")
+  console.log("Installed!")
 })
 
 self.addEventListener("activate", function() {
-  console.log("Activate!")
+  console.log("Activated!")
 })
 
 // self.addEventListener("fetch", function(event) {
@@ -46,6 +46,6 @@ self.addEventListener("activate", function() {
 self.addEventListener("push", function(event) {
   console.log("Push!", event)
   requestNotificationPermission().then(() => {
-    self.registration.showNotification("push notification works!")
+    self.registration.showNotification("Push notification works!")
   })
 })
