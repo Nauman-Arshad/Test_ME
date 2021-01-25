@@ -6,7 +6,7 @@ export default function HomePage() {
     <div>
       <Helmet>
           <meta charSet="utf-8" />
-          <title>GatsbyPWA</title>
+          <title>Gatsby PWA</title>
           <link rel="canonical" href="https://testcurrent.netlify.app" />
         </Helmet>
       <h1>Hello World</h1>

@@ -59,7 +59,7 @@ module.exports = {
             src: `/src/images/favicon.png`,
             sizes: `64x64`,
             type: `image/png`,
-            purpose : "any maskable"
+            // purpose : "any maskable"
           },
           {
             "src": "/images/logo192.png",
