@@ -39,9 +39,9 @@ self.addEventListener("activate", function() {
   console.log("Activate!")
 })
 
-self.addEventListener("fetch", function(event) {
-  console.log("Fetch!", event)
-})
+// self.addEventListener("fetch", function(event) {
+//   console.log("Fetch!", event)
+// })
 
 self.addEventListener("push", function(event) {
   console.log("Push!", event)
