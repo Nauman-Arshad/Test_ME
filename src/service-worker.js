@@ -19,7 +19,7 @@ function registerServiceWorker() {
         console.log(
           `Service Worker registration complete, scope: '${registration.scope}'`
         )
-        requestNotificationPermission().then.Notification.requestPermission
+        requestNotificationPermission()
       })
       .catch(error =>
         console.log(`Service Worker registration failed with error: '${error}'`)
