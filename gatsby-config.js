@@ -53,19 +53,18 @@ module.exports = {
         description: `The application does cool things and makes your life better.`,
         lang: `en`,
         display: `standalone`,
-        // icon: `src/images/favicon.png`,
         icons: [
           {
             src: `/src/images/favicon.png`,
             sizes: `64x64`,
-            type: `image/png`
-            // purpose : "any maskable"
+            type: `image/png`,
           },
           {
             "src": "/images/logo192.png",
             "type": "image/png",
             "sizes": "192x192"
           },
+      
           {
             "src": "/images/logo512.png",
             "type": "image/png",
@@ -95,13 +94,14 @@ module.exports = {
       options: {
         appendScript: require.resolve("./src/service-worker.js"),
         precachePages: [
-          `/index`, 
+          `/index/`, 
           `/blog/*`,
           './',
+          'index.html',
           'favicon.ico',
           'manifest.json',
-          'logo192.png',
-          'logo512.png',
+          './logo192.png',
+          './logo512.png',
         ],
       },
     },
