@@ -4,7 +4,7 @@
 // Please check https://www.gatsbyjs.org/packages/gatsby-plugin-offline/ for more info
 
 const requestNotificationPermission = async () => {
-  const permission = await Notification.requestPermission()
+  const permission = await Notification.requestPermission().then(res => console.log(res))
   // value of permission can be 'granted', 'default', 'denied'
   if (permission !== "granted") {
     throw new Error("Permission not granted for Notification")
