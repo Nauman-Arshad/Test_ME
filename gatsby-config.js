@@ -94,7 +94,16 @@ module.exports = {
       resolve: `gatsby-plugin-offline`,
       options: {
         appendScript: require.resolve("./src/service-worker.js"),
-        precachePages: [`/index/`, `/About/`, `/blog/*`],
+        precachePages: [
+          `/index/`, 
+          `/blog/*`,
+          './',
+          'index.html',
+          'favicon.ico',
+          'manifest.json',
+          './logo192.png',
+          './logo512.png',
+        ],
       },
     },
 
