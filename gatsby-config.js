@@ -53,23 +53,26 @@ module.exports = {
         description: `The application does cool things and makes your life better.`,
         lang: `en`,
         display: `standalone`,
-        icon: `src/images/favicon.png`,
+        // icon: `src/images/favicon.png`,
         icons: [
           {
             src: `/src/images/favicon.png`,
             sizes: `64x64`,
             type: `image/png`,
+            purpose : "any maskable"
           },
           {
             "src": "/images/logo192.png",
             "type": "image/png",
-            "sizes": "192x192"
+            "sizes": "192x192",
+            purpose : "any maskable"
           },
       
           {
             "src": "/images/logo512.png",
             "type": "image/png",
-            "sizes": "512x512"
+            "sizes": "512x512",
+            purpose : "any maskable"
           }
         ], // Add or remove icon sizes as desired
         start_url: `/`,
