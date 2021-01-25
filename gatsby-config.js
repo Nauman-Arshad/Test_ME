@@ -65,14 +65,11 @@ module.exports = {
             "src": "/images/logo192.png",
             "type": "image/png",
             "sizes": "192x192",
-            purpose : "any maskable"
           },
-      
           {
             "src": "/images/logo512.png",
             "type": "image/png",
             "sizes": "512x512",
-            purpose : "any maskable"
           }
         ], // Add or remove icon sizes as desired
         start_url: `/`,
