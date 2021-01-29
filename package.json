@@ -16,10 +16,12 @@
   },
   "license": "0BSD",
   "dependencies": {
+    "apollo-server-lambda": "^2.19.2",
     "@apollo/client": "^3.3.7",
     "gatsby": "^2.26.1",
     "graphql": "^15.5.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "faunadb": "^3.0.1"
   }
 }
