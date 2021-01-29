@@ -46,11 +46,11 @@ const resolvers = {
     addBookmark: async (_, { title, url }) => {
       console.log(title, url)
       try {
-        var adminClient = new faunadb.Client({ secret: 'fnAD3k5_3EACB6gCBsRr3R3wpEKT_uo1PpVFackm' });
+        var adminClient = new faunadb.Client({ secret: process.env.FAUNA });
 
         const result = await adminClient.query(
           q.Create(
-            q.Collection('bookmarks'),
+            q.Collection('bootcamp2020project12d'),
             {
               data: {
                 title,
