@@ -20,7 +20,7 @@ const resolvers = {
   Query: {
     bookmarks: async (root, args, context) => {
       try {
-        var adminClient = new faunadb.Client({ secret: 'fnAD3k5_3EACB6gCBsRr3R3wpEKT_uo1PpVFackm' });
+        var adminClient = new faunadb.Client({ secret: process.env.FAUNA });
         const result = await adminClient.query(
           q.Map(
             q.Paginate(q.Match(q.Index('url'))),
