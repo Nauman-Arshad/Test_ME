@@ -1,3 +1,7 @@
+* {
+    background-color: #84CAE7;
+}
+
 .container {
     width: 80%;
     text-align: center;
@@ -13,3 +17,4 @@
     padding: 20px;
     margin: 10px;
 }
+
