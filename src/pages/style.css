@@ -1,6 +1,3 @@
-* {
-    background-color: #84CAE7;
-}
 
 .container {
     width: 80%;
@@ -8,11 +5,10 @@
     max-width: 1000px;
     margin: 0 auto;
     border-radius: 3px;
-    background-color:  #4B88A2;
 }
 .card-container > .card{
     background-color: #0B3C49;
-    color: aliceblue;
+    color: black;
     display: inline-block;
     box-shadow: 0 0 10px grey;
     display: inline-block;
