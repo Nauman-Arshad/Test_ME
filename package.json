@@ -15,11 +15,10 @@
   },
   "license": "0BSD",
   "dependencies": {
-    "@apollo/client": "^3.2.5",
-    "gatsby": "^2.24.63",
-    "graphql": "^15.3.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@apollo/client": "^3.3.7",
+    "gatsby": "^2.31.1",
+    "graphql": "^15.5.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   }
 }
- 
