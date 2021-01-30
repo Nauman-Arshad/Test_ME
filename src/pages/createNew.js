@@ -109,20 +109,25 @@ export default function CreateNew() {
             />
           </label>
         </div>
-      <div className="lollyForm">
-        <label htmlFor="recipientName">To</label>
-        <input
-          type="text"
-          name="recipientName"
-          id="recipientName"
-          ref={recipientNameRef}
-        />
-        <label htmlFor="recipientName">Message</label>
-        <textarea rows="15" columns="30" ref={messageRef} />
-        <label htmlFor="recipientName">From</label>
-        <input type="text" name="senderName" id="senderName" ref={senderRef} />
-      </div>
-        <input type="button" value="Create" onClick={submitLollyForm} />
+        <div className="lollyForm">
+          <label htmlFor="recipientName">To</label>
+          <input
+            type="text"
+            name="recipientName"
+            id="recipientName"
+            ref={recipientNameRef}
+          />
+          <label htmlFor="recipientName">Message</label>
+          <textarea rows="15" columns="30" ref={messageRef} />
+          <label htmlFor="recipientName">From</label>
+          <input
+            type="text"
+            name="senderName"
+            id="senderName"
+            ref={senderRef}
+          />
+          <input type="button" value="Create" onClick={submitLollyForm} />
+        </div>
       </div>
     </div>
   )
