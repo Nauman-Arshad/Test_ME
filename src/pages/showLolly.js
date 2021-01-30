@@ -6,7 +6,7 @@ import Header from "../component/Header"
 import { Container } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { navigate } from "gatsby"
-import Loader from  "../component/loader"
+import Loader from "../component/loader"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -93,9 +93,9 @@ function showLolly({ location }) {
             </div>
           </div>
           <div className="show_lolly_para">
-            <p>{data.getLolly.senderName}</p>
-            <span>
-              <p>
+            <p>
+              {data.getLolly.senderName}
+              <span>
                 made this virtual lollipop for you. You can{" "}
                 <span
                   style={{
@@ -110,10 +110,9 @@ function showLolly({ location }) {
                 >
                   make your own
                 </span>{" "}
-                to send to a friend who deserve some sugary treat which won't
-                rot their teeth...
-              </p>
-            </span>
+                and send it to a friend, who deserves some sugar
+              </span>
+            </p>
           </div>
         </Container>
       </div>

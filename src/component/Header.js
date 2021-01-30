@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <div>
       <h1>Virtual Lollipop</h1>
-        <p>because we all know someone who deserves some sugar.</p>
+        <p>We all know someone, Who deserves some Sugar.</p>
     </div>
   );
 }
