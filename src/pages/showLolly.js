@@ -1,5 +1,5 @@
 import React from 'react'
-import Lolly from '../components/Lolly'
+import Lolly from '../component/Lolly'
 import { useQuery, gql } from '@apollo/client'
 import { useQueryParam } from 'gatsby-query-params'
 import Header, { } from "../component/Header"
@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import {navigate} from 'gatsby'
-import Loader from '../components/loader'
+import Loader from '../component/Loader'
 
 const useStyles = makeStyles((theme) => ({
     root: {
