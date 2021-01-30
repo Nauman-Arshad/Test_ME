@@ -43,14 +43,12 @@ export default function CreateNew() {
                 flavourBottom: color3
             }
         });
-        console.log("result form server = ",result);
+        navigate(`/showLolly?id=${result.data.createLolly.lollyPath}`)
     }
 
   return (
     <div className="container">
-      {/*data && data.hello && <div>{data.hello}</div>*/}
       <Header />
-
         <div className="lollyFormDiv">
             <div>
                 <Lolly fillLollyTop={color1} fillLollyMiddle={color2} fillLollyBottom={color3} />
@@ -61,10 +59,8 @@ export default function CreateNew() {
                         onChange={(e)=>{
                             setColor1(e.target.value)
                         }}
-                    
                     />
                 </label>
-                
                 <label htmlFor="flavourTop" className="colorPickerLabel">
                     <input type="color"  value={color2} className="colorPicker" name="flavourTop" id="flavourTop"
                         onChange={(e)=>{
