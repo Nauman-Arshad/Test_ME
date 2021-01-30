@@ -1,4 +1,4 @@
-import { gql, useMutation, useQuery } from "@apollo/client"
+import { gql, useMutation } from "@apollo/client"
 import React, { useRef, useState } from "react"
 import Header from "../component/Header"
 import Lolly from "../component/Lolly"
@@ -41,7 +41,6 @@ export default function CreateNew() {
   const messageRef = useRef()
   const senderRef = useRef()
 
-  //const {loading, error, data } = useQuery(GETDATA);
   const [createLolly] = useMutation(createLollyMutation)
 
   const submitLollyForm = async () => {
@@ -111,7 +110,7 @@ export default function CreateNew() {
           </label>
         </div>
         <div>
-          <div className="lollyFrom">
+          <div className="lollyForm">
             <label htmlFor="recipientName">To</label>
             <input
               type="text"

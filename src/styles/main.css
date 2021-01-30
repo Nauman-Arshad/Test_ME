@@ -47,7 +47,7 @@ body {
     margin-left: -10px;
 }
 
-.lollyFrom {
+.lollyForm {
     background-color: #15151B;
     display: flex;
     flex-direction: column;
@@ -55,14 +55,15 @@ body {
     align-items: center;
     padding: 10px;
     border: 4px;
+    border-radius: 5px;
 }
 
-.lollyFrom input {
+.lollyForm input, .lollyForm label {
     background-color: #222222;
 }
 
 
-CreateLollyButton {
+.CreateLollyButton {
     padding: 10px;
     border: 4px;
 }
