@@ -109,7 +109,6 @@ export default function CreateNew() {
             />
           </label>
         </div>
-      </div>
       <div className="lollyForm">
         <label htmlFor="recipientName">To</label>
         <input
@@ -125,6 +124,7 @@ export default function CreateNew() {
       </div>
       <div style={{ padding: "4px" }}>
         <input type="button" value="Create" onClick={submitLollyForm} />
+      </div>
       </div>
     </div>
   )
