@@ -38,12 +38,13 @@ body {
 }
 
 .colorPickerLabel {
-    height: 60px;
     width: 60px;
-    margin-top: -10px;
-    margin-left: -10px;
-    cursor: pointer;
+    height: 60px;
+    border-radius: 50%;
+    margin: 20px;
+    overflow: hidden;
 }
+
 .colorPicker {
     width: 80px;
     height: 80px;
@@ -60,16 +61,17 @@ body {
     padding: 10px;
     border: 4px;
     border-radius: 5px;
-    height: 500px;
 }
 
 .lollyForm input {
     background-color: #222222;
     padding: 5px;
+    color: aliceblue;
 }
 
 .lollyForm textarea {
     background-color: #222222;
+    color: aliceblue;
 }
 
 
