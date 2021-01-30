@@ -28,6 +28,7 @@ const resolvers = {
     getNewLolly: (root, args, context) => {
       return [{}]
   },
+},
   Mutation : {
     createLolly: async (_, args) => {
 
