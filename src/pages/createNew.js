@@ -129,7 +129,9 @@ export default function CreateNew() {
               ref={senderRef}
             />
           </div>
+          <div style={{padding: '4px'}}>
           <input type="button" value="Create" onClick={submitLollyForm} />
+          </div>
         </div>
       </div>
     </div>

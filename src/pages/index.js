@@ -25,7 +25,7 @@ export default function Home() {
           <Lolly fillLollyTop="#CD2753" fillLollyMiddle="#D5CFD1" fillLollyBottom="#121218"  />
         </div>
       </div>
-      <div>
+      <div className="CreateLollyButton">
       <input type="button" value="Create New Lolly"
         onClick={
           ()=>{

@@ -48,13 +48,21 @@ body {
 }
 
 .lollyFrom {
-    background-color: #222222;
+    background-color: #15151B;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    border: 4px;
 }
 
 .lollyFrom input {
     background-color: #222222;
+}
+
+
+CreateLollyButton {
+    padding: 10px;
+    border: 4px;
 }
