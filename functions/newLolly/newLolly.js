@@ -1,12 +1,14 @@
 const { ApolloServer, gql } = require('apollo-server-lambda')
-
 const faunadb = require("faunadb");
 const q = faunadb.query;
 const shortid = require("shortid");
+const dotenv = require("dotenv");
+dotenv.config()
 
 const typeDefs = gql`
   type Query {
-    hello: String
+    lolly : [Lolly!]
+    getLolly(lollyPath:String!):Lolly
   }
   type Lolly {
     recipientName: String!
@@ -25,31 +27,47 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    getNewLolly: (root, args, context) => {
-      return [{}]
-  },
-},
-  Mutation : {
-    createLolly: async (_, args) => {
-
-        console.log("args = ",args);
+    getLolly: async (_,{lollyPath}) => {
       
-      const client = new faunadb.Client({secret: process.env.FAUNA});
-      const id = shortid.generate();
-      args.lollyPath = id
+      try {
+        const client = new faunadb.Client({ secret: process.env.FAUNADB_SECRET_KEY });
 
-      const result = await client.query(
-        q.Create(q.Collection("bootcamp2020project12e"), {
-          data: args
-        })
-      );
+        const result = await client.query(
+          q.Get(q.Match(q.Index("lolly_by_path"), lollyPath))
+          )
+          
+               
+         return result.data
         
-      console.log('result', result);
-      console.log('result', result.data);
-      return result.data
-    },
+       
+      }
+      catch (error) {
+        console.log(error)
+      }
+    }
+
+  },
+  Mutation: {
+    createLolly: async (_, { flavourTop, flavourMiddle, flavourBottom, recipientName, message, senderName }) => {
+      try {
+        const client = new faunadb.Client({ secret: process.env.FAUNADB_SECRET_KEY });
+        const id = shortid.generate()
+        const result = await client.query(
+          q.Create(q.Collection('bootcamp2020project12e'), {
+            data: { flavourTop:flavourTop, flavourMiddle:flavourMiddle, flavourBottom:flavourBottom, recipientName:recipientName, message:message, senderName, lollyPath:id }
+          })
+        )
+        
+          return result.data
+      }
+      catch(error) {
+        console.log(error)
+      }
+    }
   }
 }
+
+
 
 const server = new ApolloServer({
   typeDefs,
@@ -57,3 +75,5 @@ const server = new ApolloServer({
 })
 
 exports.handler = server.createHandler()
+
+
