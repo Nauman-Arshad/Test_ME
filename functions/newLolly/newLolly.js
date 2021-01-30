@@ -25,9 +25,8 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    hello: () => {
-      return 'Hello, Lolly!'
-    },
+    getNewLolly: (root, args, context) => {
+      return [{}]
   },
   Mutation : {
     createLolly: async (_, args) => {
