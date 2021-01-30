@@ -5,10 +5,9 @@ import { useQueryParam } from "gatsby-query-params"
 import Header from "../component/Header"
 import { Container } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
-import { navigate } from "gatsby"
 import Loader from "../component/loader"
 
-const useStyles = makeStyles(theme => ({
+makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
@@ -34,7 +33,6 @@ const GET_ALL = gql`
 `
 
 function showLolly({ location }) {
-  const classes = useStyles()
 
   const id = useQueryParam("id", "123")
 
@@ -88,31 +86,9 @@ function showLolly({ location }) {
                   {data.getLolly.recipientName}
                 </p>
                 <p className="show_get_message">{data.getLolly.message}</p>
-                <p className="show_sender_name">{`___ ${data.getLolly.senderName}`}</p>
+                <p className="show_sender_name">{`___ ${data.getLolly.senderName}___`}</p>
               </div>
             </div>
-          </div>
-          <div className="show_lolly_para">
-            <p>
-              {data.getLolly.senderName}
-              <span>
-                made this virtual lollipop for you. You can{" "}
-                <span
-                  style={{
-                    textDecoration: "underline",
-                    color: "purple",
-                    fontSize: "17px",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => {
-                    navigate("/createNew/")
-                  }}
-                >
-                  make your own
-                </span>{" "}
-                and send it to a friend, who deserves some sugar
-              </span>
-            </p>
           </div>
         </Container>
       </div>

@@ -1,6 +1,7 @@
 body {
-    background-color: #EDF2F4;
+    background-color: #21212B;
     text-align: center;
+    color: aliceblue;
 }
 .container {
     width: 800px;
@@ -47,8 +48,13 @@ body {
 }
 
 .lollyFrom {
+    background-color: #222222;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.lollyFrom input {
+    background-color: #222222;
 }
