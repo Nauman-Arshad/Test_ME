@@ -8,6 +8,12 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+.header {
+    margin-bottom: 70px;
+}
+
+
 .listLollies {
     display: flex;
     flex-direction: row;
@@ -32,13 +38,11 @@ body {
 }
 
 .colorPickerLabel {
-    width: 60px;
     height: 60px;
-    border-radius: 50%;
-    margin: 20px;
-    overflow: hidden;
-
-
+    width: 60px;
+    margin-top: -10px;
+    margin-left: -10px;
+    cursor: pointer;
 }
 .colorPicker {
     width: 80px;
@@ -56,14 +60,20 @@ body {
     padding: 10px;
     border: 4px;
     border-radius: 5px;
+    height: 500px;
 }
 
-.lollyForm input, .lollyForm label {
+.lollyForm input {
+    background-color: #222222;
+    padding: 5px;
+}
+
+.lollyForm textarea {
     background-color: #222222;
 }
 
 
 .CreateLollyButton {
+    margin-top: 70px;
     padding: 10px;
-    border: 4px;
 }
