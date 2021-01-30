@@ -6,7 +6,7 @@ import Header from "../component/Header"
 import { Container } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { navigate } from "gatsby"
-import Loader from  "../component/Loader"
+import Loader from  "../component/loader"
 
 const useStyles = makeStyles(theme => ({
   root: {
