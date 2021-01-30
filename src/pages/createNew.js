@@ -2,6 +2,8 @@ import { gql, useMutation, useQuery } from "@apollo/client";
 import React, { useRef, useState } from "react"
 import Header from "../component/Header"
 import Lolly from "../component/Lolly"
+import { navigate } from "gatsby"
+
 
 const GETDATA = gql`
     {
