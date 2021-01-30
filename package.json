@@ -17,6 +17,7 @@
     "@apollo/client": "^3.2.5",
     "@material-ui/core": "^4.11.3",
     "apollo-server-lambda": "^2.18.2",
+    "browser-monads": "^1.0.0",
     "faunadb": "^3.0.1",
     "gatsby": "^2.24.79",
     "gatsby-query-params": "^1.2.1",
