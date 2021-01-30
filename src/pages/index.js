@@ -1,7 +1,6 @@
 import { navigate } from "gatsby";
 import React from "react"
 import Header from "../component/Header"
-//import Lolly from '../svg/lolly-image.svg'
 import Lolly from '../component/Lolly'
 
 

@@ -1,8 +1,8 @@
 import React from 'react'
-import Lolly from '../components/lolly'
+import Lolly from '../components/Lolly'
 import { useQuery, gql } from '@apollo/client'
 import { useQueryParam } from 'gatsby-query-params'
-import Header, { } from '../components/header/header'
+import Header, { } from "../component/Header"
 import { Container, Link } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
