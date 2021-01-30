@@ -122,7 +122,7 @@ export default function CreateNew() {
         <label htmlFor="recipientName">From</label>
         <input type="text" name="senderName" id="senderName" ref={senderRef} />
       </div>
-        <input type="button" value="Create" onClick={submitLollyForm} style={{ padding: "4px" }} />
+        <input type="button" value="Create" onClick={submitLollyForm} />
       </div>
     </div>
   )
