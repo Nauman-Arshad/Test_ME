@@ -1,46 +1,35 @@
 {
-  "name": "treact",
-  "version": "0.1.0",
+  "name": "gatsby-starter-hello-world",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "feather-icons": "^4.26.0",
-    "framer-motion": "^1.10.2",
-    "react": "^16.13.1",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-dom": "^16.13.1",
-    "react-modal": "^3.11.2",
-    "react-rnd": "^10.1.9",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "react-slick": "^0.25.2",
-    "slick-carousel": "^1.8.1",
-    "styled-components": "^5.0.1",
-    "tailwindcss": "^1.2.0",
-    "twin.macro": "^1.0.0-alpha.7",
-    "use-in-view": "^1.0.15"
-  },
+  "description": "A simplified bare-bones starter for Gatsby",
+  "version": "0.1.0",
+  "license": "0BSD",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "gatsby": "^2.26.1",
+    "gatsby-plugin-typescript": "^2.9.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/node": "^14.14.16",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "prettier": "2.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
