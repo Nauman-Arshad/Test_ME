@@ -1,14 +1,17 @@
-import React from "react"
-import App from "./App"
+import React from 'react';
+import { Counter } from '../features/counter/Counter';
 import store from '../features/store';
 import { Provider } from 'react-redux';
+import './index.css';
 
-export default function HomePage() {
+function HomePage() {
   return (
-    <div>
+    <div className="HomePage">
       <Provider store={store}>
-        <App />
-    </Provider>
+        <Counter />
+      </Provider>
     </div>
-  )
+  );
 }
+
+export default HomePage;
