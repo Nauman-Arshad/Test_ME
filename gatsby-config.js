@@ -5,33 +5,7 @@ module.exports = {
   },
   plugins: [
 
-    { // Gatsby Source FileSystem
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
-      },
-    },
-    
-    // Transforming MarkDown Files
-    "gatsby-plugin-sharp",
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          'gatsby-remark-relative-images',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 750,
-              linkImagesToOriginal: false
-            }
-          }
-        ]
-      }
-    },
-
-    // TYPESCRIPT
+      // TYPESCRIPT
     {
       // Gatsby Plugin Typescript
       resolve: `gatsby-plugin-typescript`,
@@ -42,7 +16,7 @@ module.exports = {
       },
     },
 
-    // PROGRESSIVE WEB APPLICATION
+      // PROGRESSIVE WEB APPLICATION
 
     {
       // Gatsby Plugin Manifest
@@ -88,7 +62,7 @@ module.exports = {
 
     },
     
-    // SERVICE-WORKER
+      // SERVICE-WORKER
   
     {
       resolve: `gatsby-plugin-offline`,
@@ -106,24 +80,5 @@ module.exports = {
         ],
       },
     },
-
-    // React Helmet
-    `gatsby-plugin-react-helmet`,
-
-    // For Static Website Cauching in Netlify Deployment; for S3 Instance see Doc.
-    'gatsby-plugin-netlify-cache',
-
-
-    // Plugins for the Blog
-    `gatsby-plugin-sass`,
-
-    
-    // { // Gatsby Source Contentful
-    //   resolve: `gatsby-source-contentful`,
-    //   options: {
-    //     spaceId: process.env.CONTENTFUL_SPACE_ID,
-    //     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-    //   },
-    // },
   ],
 }
