@@ -52,9 +52,9 @@ export default function Home() {
       </form>
       <div>
       <h2>My Bookmark List</h2>
-        <li>My Bookmark 1</li><a href="https://google.com" target="_blank">https://google.com</a>
-        <li>My Bookmark 2</li><a href="https://fb.com" target="_blank">https://fb.com</a>
-        <li>My Bookmark 3</li><a href="https://twitter.com" target="_blank">https://twitter.com</a>
+        <li>My Bookmark 1</li><a href="https://google.com" target="_blank">https://google.com</a><button>""</button><button>x</button>
+        <li>My Bookmark 2</li><a href="https://fb.com" target="_blank">https://fb.com</a><button>""</button><button>x</button>
+        <li>My Bookmark 3</li><a href="https://twitter.com" target="_blank">https://twitter.com</a><button>""</button><button>x</button>
       </div>
     </div>
   )
