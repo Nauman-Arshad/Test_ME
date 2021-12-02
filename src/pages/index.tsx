@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
+import shortid from "shortid"
 import './style.css';
 
 const GET_BOOKMARKS = gql`
@@ -40,21 +41,68 @@ const UPDATE_BOOKMARK = gql`
 `
 
 export default function Home() {
+  const [title, setTitle] = useState("")
+  const [url, setUrl] = useState("")
+  const [oldTitle, setOldTitle] = useState(title)
+  const [oldUrl, setOldUrl] = useState(url)
+  const { data, loading } = useQuery(GET_BOOKMARKS)
+  const [addBookmark] = useMutation(ADD_BOOKMARK, {refetchQueries: [GET_BOOKMARKS]});
+  const [deleteBookmark] = useMutation(DELETE_BOOKMARK, {refetchQueries: [GET_BOOKMARKS]});
+  const [ updateBookmark, { loading: mutationLoading, error: mutationError } ] = useMutation(UPDATE_BOOKMARK, {refetchQueries: [GET_BOOKMARKS]});
+
+  const handleAddBookmark = async () => {
+    const addbookmark = {
+      id: shortid.generate(),
+      title,
+      url,
+    }
+    console.log("Creating Bookmark:", addbookmark)
+    await addBookmark({
+      variables: {
+        addbookmark,
+      },
+    })
+  }
+
+  const handleUpdateBookmark = (id) => {
+    console.log(id);
+    const newbookmark = {
+      id,
+      title: oldTitle,
+      url: oldUrl,
+    }
+    console.log("Update Bookmark:", newbookmark)
+    updateBookmark({
+      variables: {
+        bookmark: newbookmark,
+      },
+    })
+  }
+
+
   return (
     <div>
       <h2>Bookmark Form</h2>
-      <form>
         Enter Title
-        <input type="text" />
+        <input value={title} onChange={({ target }) => setTitle(target.value)} />
         Enter URL
-        <input type="text" />
-        <button type="submit">Add Bookmark</button>
-      </form>
+        <input value={url} onChange={({ target }) => setUrl(target.value)} />
+        <button  onClick={() => handleAddBookmark()} >Add Bookmark</button>
       <div>
       <h2>My Bookmark List</h2>
-        <li>My Bookmark 1</li><a href="https://google.com" target="_blank">https://google.com</a><button>""</button><button>x</button>
-        <li>My Bookmark 2</li><a href="https://fb.com" target="_blank">https://fb.com</a><button>""</button><button>x</button>
-        <li>My Bookmark 3</li><a href="https://twitter.com" target="_blank">https://twitter.com</a><button>""</button><button>x</button>
+      {loading && <h3>Loading ...</h3>}
+      {!loading &&
+        data &&
+        data.getBookmarks.map((bookmark) => (
+          <div key={bookmark.id}>
+            <li>{bookmark.title}</li><a href={bookmark.url} target="_blank">{bookmark.url}</a>
+            <button onClick={() => deleteBookmark({variables: {bookmarkId: bookmark.id}})}>x</button>
+            <input  type="text"  onChange={(e)=> setOldTitle(e.target.value)} />
+            <input  type="text"  onChange={(e)=> setOldUrl(e.target.value)} />
+            <button type="button" onClick={() => handleUpdateBookmark(bookmark.id)}>Update</button>
+          </div>
+        ))
+      }
       </div>
     </div>
   )
