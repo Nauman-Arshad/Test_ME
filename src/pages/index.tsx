@@ -41,10 +41,9 @@ const UPDATE_BOOKMARK = gql`
 `
 
 export default function Home() {
-  const [title, setTitle] = useState("")
-  const [url, setUrl] = useState("")
-  const [oldTitle, setOldTitle] = useState(title)
-  const [oldUrl, setOldUrl] = useState(url)
+  const [bookmark, setBookmark] = useState({ title: '', url: '' });
+  const [oldBookmark, setOldBookmark] = useState({ oldTitle: bookmark.title, oldUrl: bookmark.url });
+
   const { data, loading } = useQuery(GET_BOOKMARKS)
   const [addBookmark] = useMutation(ADD_BOOKMARK, {refetchQueries: [GET_BOOKMARKS]});
   const [deleteBookmark] = useMutation(DELETE_BOOKMARK, {refetchQueries: [GET_BOOKMARKS]});
@@ -53,8 +52,8 @@ export default function Home() {
   const handleAddBookmark = async () => {
     const addbookmark = {
       id: shortid.generate(),
-      title,
-      url,
+      title: bookmark.title,
+      url: bookmark.url,
     }
     console.log("Creating Bookmark:", addbookmark)
     await addBookmark({
@@ -68,8 +67,8 @@ export default function Home() {
     console.log(id);
     const newbookmark = {
       id,
-      title: oldTitle,
-      url: oldUrl,
+      title: oldBookmark.oldTitle,
+      url: oldBookmark.oldUrl,
     }
     console.log("Update Bookmark:", newbookmark)
     updateBookmark({
@@ -84,9 +83,9 @@ export default function Home() {
     <div>
       <h2>Bookmark Form</h2>
         Enter Title
-        <input value={title} onChange={({ target }) => setTitle(target.value)} />
+        <input value={bookmark.title} onChange={e=> setBookmark({ ...bookmark, title: e.target.value  })} />
         Enter URL
-        <input value={url} onChange={({ target }) => setUrl(target.value)} />
+        <input value={bookmark.url} onChange={e=> setBookmark({ ...bookmark, url: e.target.value  })} />
         <button  onClick={() => handleAddBookmark()} >Add Bookmark</button>
       <div>
       <h2>My Bookmark List</h2>
@@ -97,8 +96,8 @@ export default function Home() {
           <div key={bookmark.id}>
             <li>{bookmark.title}</li><a href={bookmark.url} target="_blank">{bookmark.url}</a>
             <button onClick={() => deleteBookmark({variables: {bookmarkId: bookmark.id}})}>x</button>
-            <input  type="text"  onChange={(e)=> setOldTitle(e.target.value)} />
-            <input  type="text"  onChange={(e)=> setOldUrl(e.target.value)} />
+            <input  type="text"  onChange={e=> setOldBookmark({...oldBookmark, oldTitle: e.target.value})} />
+            <input  type="text"  onChange={e=> setOldBookmark({...oldBookmark, oldUrl: e.target.value})} />
             <button type="button" onClick={() => handleUpdateBookmark(bookmark.id)}>Update</button>
           </div>
         ))
