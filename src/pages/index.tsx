@@ -42,7 +42,20 @@ const UPDATE_BOOKMARK = gql`
 export default function Home() {
   return (
     <div>
-      Hello World
+      <h2>Bookmark Form</h2>
+      <form>
+        Enter Title
+        <input type="text" />
+        Enter URL
+        <input type="text" />
+        <button type="submit">Add Bookmark</button>
+      </form>
+      <div>
+      <h2>My Bookmark List</h2>
+        <li>My Bookmark 1</li><a href="https://google.com" target="_blank">https://google.com</a>
+        <li>My Bookmark 2</li><a href="https://fb.com" target="_blank">https://fb.com</a>
+        <li>My Bookmark 3</li><a href="https://twitter.com" target="_blank">https://twitter.com</a>
+      </div>
     </div>
   )
 }
