@@ -3,6 +3,17 @@ import React, { useState } from 'react'
 
 const Form = () => {
     const[width, setWidth] = useState("")
+    const[breadth, setBreadth] = useState("")
+    const[height, setHeight] = useState("")
+    const[wallArea1, setWallArea1] = useState("")
+    const[wallArea2, setWallArea2] = useState("")
+    const[wallArea3, setWallArea3] = useState("")
+    const[wallArea4, setWallArea4] = useState("")
+    const[windowArea1, setWindowArea1] = useState("")
+    const[windowArea2, setWindowArea2] = useState("")
+    const[windowArea3, setWindowArea3] = useState("")
+    const[windowArea4, setWindowArea4] = useState("")
+    const[partitionArea, setPartitionArea] = useState("")
     
     return (
         <div>
@@ -18,12 +29,11 @@ const Form = () => {
                 <br />
                 <h3> Volume of Room </h3>
                 <label htmlFor="city">Width</label>
-                <input type="text"  value={width} onChange={(e) => setWidth(e.target.value)}
-                />
+                <input type="text"  value={width} onChange={(e) => setWidth(e.target.value)} />
                 <label htmlFor="city">Breadth</label>
-                <input type="text" />
+                <input type="text"  value={breadth} onChange={(e) => setBreadth(e.target.value)} />
                 <label htmlFor="city">Height</label>
-                <input type="text" />
+                <input type="text"  value={height} onChange={(e) => setHeight(e.target.value)} />
                 <br />
                 <br />
                 <h3> Walls </h3>
@@ -42,7 +52,7 @@ const Form = () => {
                     <option value="audi">West</option>
                 </select>
                 <label htmlFor="city">Wall Area</label>
-                <input type="text" />
+                <input type="text"  value={wallArea1} onChange={(e) => setWallArea1(e.target.value)} />
                 <br />
                 <label htmlFor="city">Select a Direction</label>
                 <select name="Direciton" id="direction">
@@ -52,7 +62,7 @@ const Form = () => {
                     <option value="audi">West</option>
                 </select>
                 <label htmlFor="city">Wall Area</label>
-                <input type="text" />
+                <input type="text"  value={wallArea2} onChange={(e) => setWallArea2(e.target.value)} />
                 <br />
                 <label htmlFor="city">Select a Direction</label>
                 <select name="Direciton" id="direction">
@@ -62,7 +72,7 @@ const Form = () => {
                     <option value="audi">West</option>
                 </select>
                 <label htmlFor="city">Wall Area</label>
-                <input type="text" />
+                <input type="text"  value={wallArea3} onChange={(e) => setWallArea3(e.target.value)} />
                 <br />
                 <label htmlFor="city">Select a Direction</label>
                 <select name="Direciton" id="direction">
@@ -72,7 +82,7 @@ const Form = () => {
                     <option value="audi">West</option>
                 </select>
                 <label htmlFor="city">Wall Area</label>
-                <input type="text" />
+                <input type="text"  value={wallArea4} onChange={(e) => setWallArea4(e.target.value)} />
                 <br />
                 <br />
                 <h3> Windows </h3>
@@ -87,7 +97,7 @@ const Form = () => {
                 <label htmlFor="city">North Wall</label>
                 <br />
                 <label htmlFor="city">Window Area</label>
-                <input type="text" />
+                <input type="text"  value={windowArea1} onChange={(e) => setWindowArea1(e.target.value)} />
                 <label htmlFor="city">No. of Windows</label>
                 <select name="No-of-Windows" id="direction">
                     <option value="volvo">1</option>
@@ -101,7 +111,7 @@ const Form = () => {
                 <label htmlFor="city">South Wall</label>
                 <br />
                 <label htmlFor="city">Window Area</label>
-                <input type="text" />
+                <input type="text"  value={windowArea2} onChange={(e) => setWindowArea2(e.target.value)} />
                 <label htmlFor="city">No. of Windows</label>
                 <select name="No-of-Windows" id="direction">
                     <option value="volvo">1</option>
@@ -115,7 +125,7 @@ const Form = () => {
                 <label htmlFor="city">East Wall</label>
                 <br />
                 <label htmlFor="city">Window Area</label>
-                <input type="text" />
+                <input type="text"  value={windowArea3} onChange={(e) => setWindowArea3(e.target.value)} />
                 <label htmlFor="city">No. of Windows</label>
                 <select name="No-of-Windows" id="direction">
                     <option value="volvo">1</option>
@@ -129,7 +139,7 @@ const Form = () => {
                 <label htmlFor="city">West Wall</label>
                 <br />
                 <label htmlFor="city">Window Area</label>
-                <input type="text" />
+                <input type="text"  value={windowArea4} onChange={(e) => setWindowArea4(e.target.value)} />
                 <label htmlFor="city">No. of Windows</label>
                 <select name="No-of-Windows" id="direction">
                     <option value="volvo">1</option>
@@ -158,7 +168,7 @@ const Form = () => {
                 <br />
                 <h3> Partitions </h3>
                 <label htmlFor="city">Partition Area</label>
-                <input type="text" />
+                <input type="text"  value={partitionArea} onChange={(e) => setPartitionArea(e.target.value)} />
                 <br />
                 <br />
                 <h3> Shading </h3>
