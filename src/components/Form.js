@@ -1,90 +1,82 @@
 import React, { useState } from 'react'
 
 
-
-
 const Form = () => {
-    // const [CLTD, setCLTD] = useState("26")
-
-    // for (i in City) {
-    //     if (City.name === City[i]) {
-    //         CLDT = City.cltd
-    //     }
-    // }
-
-
+    const[width, setWidth] = useState("")
+    
     return (
         <div>
             <h1>Cooling Load Calculator</h1>
             <form>
-                <label for="city">Select a City</label>
+                <label htmlFor="city">Select a City</label>
                 <select name="City" id="city">
                 {Cities.map((City) => (
-                    <option value="lahore">{City.name}</option>
+                    <option key={City.id} value={City.td}>{City.name}</option>
                     ))}
                 </select>
                 <br />
                 <br />
                 <h3> Volume of Room </h3>
-                <label for="city">Width</label>
+                <label htmlFor="city">Width</label>
+                <input type="text"  value={width} onChange={(e) => setWidth(e.target.value)}
+                />
+                <label htmlFor="city">Breadth</label>
                 <input type="text" />
-                <label for="city">Breadth</label>
-                <input type="text" />
-                <label for="city">Height</label>
+                <label htmlFor="city">Height</label>
                 <input type="text" />
                 <br />
                 <br />
                 <h3> Walls </h3>
-                <label for="city">Wall Material</label>
+                <label htmlFor="city">Wall Material</label>
                 <select name="Direciton" id="direction">
                     <option value="volvo">Concrete Wall (6 Inch)</option>
                     <option value="saab">Brick Wall (10 Inch)</option>
                 </select>
                 <br />
                 <br />
-                <label for="city">Select a Direction</label>
+                <label htmlFor="city">Select a Direction</label>
                 <select name="Direciton" id="direction">
                     <option value="volvo">North</option>
                     <option value="saab">South</option>
                     <option value="opel">East</option>
                     <option value="audi">West</option>
                 </select>
-                <label for="city">Wall Area</label>
+                <label htmlFor="city">Wall Area</label>
                 <input type="text" />
                 <br />
-                <label for="city">Select a Direction</label>
+                <label htmlFor="city">Select a Direction</label>
                 <select name="Direciton" id="direction">
                     <option value="volvo">North</option>
                     <option value="saab">South</option>
                     <option value="opel">East</option>
                     <option value="audi">West</option>
                 </select>
-                <label for="city">Wall Area</label>
+                <label htmlFor="city">Wall Area</label>
                 <input type="text" />
                 <br />
-                <label for="city">Select a Direction</label>
+                <label htmlFor="city">Select a Direction</label>
                 <select name="Direciton" id="direction">
                     <option value="volvo">North</option>
                     <option value="saab">South</option>
                     <option value="opel">East</option>
                     <option value="audi">West</option>
                 </select>
-                <label for="city">Wall Area</label>
+                <label htmlFor="city">Wall Area</label>
                 <input type="text" />
                 <br />
-                <label for="city">Select a Direction</label>
+                <label htmlFor="city">Select a Direction</label>
                 <select name="Direciton" id="direction">
                     <option value="volvo">North</option>
                     <option value="saab">South</option>
                     <option value="opel">East</option>
                     <option value="audi">West</option>
                 </select>
-                <label for="city">Wall Area</label>
+                <label htmlFor="city">Wall Area</label>
                 <input type="text" />
                 <br />
                 <br />
                 <h3> Windows </h3>
-                <label for="city">Window Material</label>
+                <label htmlFor="city">Window Material</label>
                 <select name="Direciton" id="direction">
                     <option value="volvo">Double Glaze Window</option>
                     <option value="volvo">Vertical Double Glaze Window</option>
@@ -92,11 +84,11 @@ const Form = () => {
                 </select>
                 <br />
                 <br />
-                <label for="city">North Wall</label>
+                <label htmlFor="city">North Wall</label>
                 <br />
-                <label for="city">Window Area</label>
+                <label htmlFor="city">Window Area</label>
                 <input type="text" />
-                <label for="city">No. of Windows</label>
+                <label htmlFor="city">No. of Windows</label>
                 <select name="No-of-Windows" id="direction">
                     <option value="volvo">1</option>
                     <option value="saab">2</option>
@@ -106,11 +98,11 @@ const Form = () => {
                 </select>
                 <br />
                 <br />
-                <label for="city">South Wall</label>
+                <label htmlFor="city">South Wall</label>
                 <br />
-                <label for="city">Window Area</label>
+                <label htmlFor="city">Window Area</label>
                 <input type="text" />
-                <label for="city">No. of Windows</label>
+                <label htmlFor="city">No. of Windows</label>
                 <select name="No-of-Windows" id="direction">
                     <option value="volvo">1</option>
                     <option value="saab">2</option>
@@ -120,11 +112,11 @@ const Form = () => {
                 </select>
                 <br />
                 <br />
-                <label for="city">East Wall</label>
+                <label htmlFor="city">East Wall</label>
                 <br />
-                <label for="city">Window Area</label>
+                <label htmlFor="city">Window Area</label>
                 <input type="text" />
-                <label for="city">No. of Windows</label>
+                <label htmlFor="city">No. of Windows</label>
                 <select name="No-of-Windows" id="direction">
                     <option value="volvo">1</option>
                     <option value="saab">2</option>
@@ -134,11 +126,11 @@ const Form = () => {
                 </select>
                 <br />
                 <br />
-                <label for="city">West Wall</label>
+                <label htmlFor="city">West Wall</label>
                 <br />
-                <label for="city">Window Area</label>
+                <label htmlFor="city">Window Area</label>
                 <input type="text" />
-                <label for="city">No. of Windows</label>
+                <label htmlFor="city">No. of Windows</label>
                 <select name="No-of-Windows" id="direction">
                     <option value="volvo">1</option>
                     <option value="saab">2</option>
@@ -149,7 +141,7 @@ const Form = () => {
                 <br />
                 <br />
                 <h3> Doors </h3>
-                <label for="city">Door Material</label>
+                <label htmlFor="city">Door Material</label>
                 <select name="Direciton" id="direction">
                     <option value="volvo">1 Inch wood</option>
                     <option value="volvo">2 Inch Wood</option>
@@ -157,7 +149,7 @@ const Form = () => {
                 </select>
                 <br />
                 <br />
-                <label for="city">Number of Doors</label>
+                <label htmlFor="city">Number of Doors</label>
                 <select name="No-of-Doors" id="direction">
                     <option value="volvo">1</option>
                     <option value="saab">2</option>
@@ -165,12 +157,12 @@ const Form = () => {
                 <br />
                 <br />
                 <h3> Partitions </h3>
-                <label for="city">Partition Area</label>
+                <label htmlFor="city">Partition Area</label>
                 <input type="text" />
                 <br />
                 <br />
                 <h3> Shading </h3>
-                <label for="city">Select Shading Type</label>
+                <label htmlFor="city">Select Shading Type</label>
                 <select name="No-of-Doors" id="direction">
                     <option value="volvo">Ventilation Blind</option>
                     <option value="saab">Roller Blind</option>
@@ -178,7 +170,7 @@ const Form = () => {
                 <br />
                 <br />
                 <h3> Lights </h3>
-                <label for="city">Number of Lights</label>
+                <label htmlFor="city">Number of Lights</label>
                 <select name="No-of-Doors" id="direction">
                 <option value="volvo">1</option>
                     <option value="saab">2</option>
@@ -194,7 +186,7 @@ const Form = () => {
                 <br />
                 <br />
                 <h3> Occupancy </h3>
-                <label for="city">Number of People</label>
+                <label htmlFor="city">Number of People</label>
                 <select name="No-of-Doors" id="direction">
                     <option value="volvo">10</option>
                     <option value="saab">20</option>
@@ -235,31 +227,71 @@ const Cities = [
     {
         id: 2,
         name: "Multan",
-        cltd: 28
+        td: 28
     },
     {
         id: 3,
         name: "Narowal",
-        cltd: 26
+        td: 26
     },
     {
         id: 4,
         name: "Bahawalpur",
-        cltd: 26
+        td: 26
     }
 ]
 
-let CLDT = Cities.find((City, i) => {
-    if (City.name === 'Lahore') {
-        return 26
-    } else if (City.name === 'Multan') {
-        return 28
+
+
+
+
+
+// let CLDT = Cities.find((City, i) => {
+//     if (City.name === 'Lahore') {
+//         return 26
+//     } else if (City.name === 'Multan') {
+//         return 28
         
-    } else if (City.name === 'Narowal') {
-        return 30.5
+//     } else if (City.name === 'Narowal') {
+//         return 30.5
         
-    } else if (City.name === 'Bahawalpur') {
-        return 29
+//     } else if (City.name === 'Bahawalpur') {
+//         return 29
         
-    }
-});
+//     }
+// });
+
+
+
+
+
+
+
+// const [CLTD, setCLTD] = useState("26")
+
+// for (i in City) {
+//     if (City.name === City[i]) {
+//         CLDT = City.cltd
+//     }
+// }
+
+
+// const [CLTD, setCLTD] = useState({
+//     Lahore: 26,
+//     Multan: 28,
+//     Narowal: 30.5,
+//     Bahawalpur: 29
+// })
+
+// // for (const [key, value] of Object.entries(page)) {
+// //     if (value) {
+// //        console.log(key);
+// //     }
+// //   }
+
+// console.log(CLTD.);
+
+// // setResource(prevState => ({
+// //     ...prevState,
+// //     comment: "new Value",
+// // }))
