@@ -134,7 +134,7 @@ const Form = () => {
 
         const OccupanyLoad = (noOfPeople * c8) + (noOfPeople * c9)
 
-        const InfilterationLoad = (Volume * c10 * selectedCity * c11 * c12) + (c10 * c13 * c14)
+        const InfilterationLoad = (Volume * selectedCity * c11 * c12) + (c10 * c13 * c14)
 
         const VentilationLoad = (noOfPeople * c15 * c16 * c17) + (noOfPeople * c15 * c14 * c13)
 
@@ -341,7 +341,7 @@ const Form = () => {
                 <br />
             {
                 calculatedResult !== "" &&
-                <div>{calculatedResult}</div>
+                <div style={{backgroundColor: 'grey'}}>{calculatedResult}</div>
             }
                 <br />
                 <br />
