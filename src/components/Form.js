@@ -2,6 +2,26 @@ import React, { useState } from 'react'
 
 
 const Form = () => {
+    const[selectedCity, setSelectedCity] = useState("")
+    const[selectedWallMaterial, setSelectedWallMaterial] = useState("")
+    const[selectedDirection1, setSelectedDirection1] = useState("")
+    const[selectedDirection2, setSelectedDirection2] = useState("")
+    const[selectedDirection3, setSelectedDirection3] = useState("")
+    const[selectedDirection4, setSelectedDirection4] = useState("")
+    const[selectedWindowMaterial, setSelectedWindowMaterial] = useState("")
+    const[noOfWindows1, setNoOfWindows1] = useState("")
+    const[noOfWindows2, setNoOfWindows2] = useState("")
+    const[noOfWindows3, setNoOfWindows3] = useState("")
+    const[noOfWindows4, setNoOfWindows4] = useState("")
+    const[selectedDoorMaterial, setSelectedDoorMaterial] = useState("")
+    const[noOfDoors, setNoOfDoors] = useState("")
+    const[selectedShadingType, setSelectedShadingType] = useState("")
+    const[noOfLights, setNoOfLights] = useState("")
+    const[noOfPeople, setNoOfPeople] = useState("")
+
+
+
+
     const[width, setWidth] = useState("")
     const[breadth, setBreadth] = useState("")
     const[height, setHeight] = useState("")
@@ -15,12 +35,67 @@ const Form = () => {
     const[windowArea4, setWindowArea4] = useState("")
     const[partitionArea, setPartitionArea] = useState("")
     
+
+
+
+    const handleCitySelect = (e) => {
+        setSelectedCity(e.target.value);
+    }
+    const handleWallMaterialSelect = (e) => {
+        setSelectedWallMaterial(e.target.value);
+    }
+    const handleDirection1Select = (e) => {
+        setSelectedDirection1(e.target.value);
+    }
+    const handleDirection2Select = (e) => {
+        setSelectedDirection2(e.target.value);
+    }
+    const handleDirection3Select = (e) => {
+        setSelectedDirection3(e.target.value);
+    }
+    const handleDirection4Select = (e) => {
+        setSelectedDirection4(e.target.value);
+    }
+    const handleWindowMaterialSelect = (e) => {
+        setSelectedWindowMaterial(e.target.value);
+    }
+    const handleNoofWindows1Select = (e) => {
+        setNoOfWindows1(e.target.value);
+    }
+    const handleNoofWindows2Select = (e) => {
+        setNoOfWindows2(e.target.value);
+    }
+    const handleNoofWindows3Select = (e) => {
+        setNoOfWindows3(e.target.value);
+    }
+    const handleNoofWindows4Select = (e) => {
+        setNoOfWindows4(e.target.value);
+    }
+    const handleDoorMaterialSelect = (e) => {
+        setSelectedDoorMaterial(e.target.value);
+    }
+    const handleNoOfDoorsSelect = (e) => {
+        setNoOfDoors(e.target.value);
+    }
+    const handleShadingTypeSelect = (e) => {
+        setSelectedShadingType(e.target.value);
+    }
+    const handleNoOfLightsSelect = (e) => {
+        setNoOfLights(e.target.value);
+    }
+    const handleNoOfPeopleSelect = (e) => {
+        setNoOfPeople(e.target.value);
+    }
+
+
+
+
     return (
         <div>
             <h1>Cooling Load Calculator</h1>
             <form>
                 <label htmlFor="city">Select a City</label>
-                <select name="City" id="city">
+                <select name="City" id="city" onChange={(e) => {handleCitySelect(e)}}>
                 {Cities.map((City) => (
                     <option key={City.id} value={City.td}>{City.name}</option>
                     ))}
@@ -38,48 +113,45 @@ const Form = () => {
                 <br />
                 <h3> Walls </h3>
                 <label htmlFor="city">Wall Material</label>
-                <select name="Direciton" id="direction">
-                    <option value="volvo">Concrete Wall (6 Inch)</option>
-                    <option value="saab">Brick Wall (10 Inch)</option>
+                <select name="City" id="city" onChange={(e) => {handleWallMaterialSelect(e)}}>
+                {WallMaterials.map((WallMaterial) => (
+                    <option key={WallMaterial.id} value={WallMaterial.uValue}>{WallMaterial.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
                 <label htmlFor="city">Select a Direction</label>
-                <select name="Direciton" id="direction">
-                    <option value="volvo">North</option>
-                    <option value="saab">South</option>
-                    <option value="opel">East</option>
-                    <option value="audi">West</option>
+                <select name="City" id="city" onChange={(e) => {handleDirection1Select(e)}}>
+                {Directions.map((Direction) => (
+                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
+                    ))}
                 </select>
                 <label htmlFor="city">Wall Area</label>
                 <input type="text"  value={wallArea1} onChange={(e) => setWallArea1(e.target.value)} />
                 <br />
                 <label htmlFor="city">Select a Direction</label>
-                <select name="Direciton" id="direction">
-                    <option value="volvo">North</option>
-                    <option value="saab">South</option>
-                    <option value="opel">East</option>
-                    <option value="audi">West</option>
+                <select name="City" id="city" onChange={(e) => {handleDirection2Select(e)}}>
+                {Directions.map((Direction) => (
+                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
+                    ))}
                 </select>
                 <label htmlFor="city">Wall Area</label>
                 <input type="text"  value={wallArea2} onChange={(e) => setWallArea2(e.target.value)} />
                 <br />
                 <label htmlFor="city">Select a Direction</label>
-                <select name="Direciton" id="direction">
-                    <option value="volvo">North</option>
-                    <option value="saab">South</option>
-                    <option value="opel">East</option>
-                    <option value="audi">West</option>
+                <select name="City" id="city" onChange={(e) => {handleDirection3Select(e)}}>
+                {Directions.map((Direction) => (
+                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
+                    ))}
                 </select>
                 <label htmlFor="city">Wall Area</label>
                 <input type="text"  value={wallArea3} onChange={(e) => setWallArea3(e.target.value)} />
                 <br />
                 <label htmlFor="city">Select a Direction</label>
-                <select name="Direciton" id="direction">
-                    <option value="volvo">North</option>
-                    <option value="saab">South</option>
-                    <option value="opel">East</option>
-                    <option value="audi">West</option>
+                <select name="City" id="city" onChange={(e) => {handleDirection4Select(e)}}>
+                {Directions.map((Direction) => (
+                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
+                    ))}
                 </select>
                 <label htmlFor="city">Wall Area</label>
                 <input type="text"  value={wallArea4} onChange={(e) => setWallArea4(e.target.value)} />
@@ -87,10 +159,10 @@ const Form = () => {
                 <br />
                 <h3> Windows </h3>
                 <label htmlFor="city">Window Material</label>
-                <select name="Direciton" id="direction">
-                    <option value="volvo">Double Glaze Window</option>
-                    <option value="volvo">Vertical Double Glaze Window</option>
-                    <option value="saab">Horizontal Single Glass</option>
+                <select name="City" id="city" onChange={(e) => {handleWindowMaterialSelect(e)}}>
+                {WindowMaterials.map((WindowMaterial) => (
+                    <option key={WindowMaterial.id} value={WindowMaterial.uValue}>{WindowMaterial.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
@@ -99,12 +171,10 @@ const Form = () => {
                 <label htmlFor="city">Window Area</label>
                 <input type="text"  value={windowArea1} onChange={(e) => setWindowArea1(e.target.value)} />
                 <label htmlFor="city">No. of Windows</label>
-                <select name="No-of-Windows" id="direction">
-                    <option value="volvo">1</option>
-                    <option value="saab">2</option>
-                    <option value="saab">3</option>
-                    <option value="saab">4</option>
-                    <option value="saab">5</option>
+                <select name="City" id="city" onChange={(e) => {handleNoofWindows1Select(e)}}>
+                {NoOfWindowsPerWall.map((Windows) => (
+                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
@@ -113,12 +183,10 @@ const Form = () => {
                 <label htmlFor="city">Window Area</label>
                 <input type="text"  value={windowArea2} onChange={(e) => setWindowArea2(e.target.value)} />
                 <label htmlFor="city">No. of Windows</label>
-                <select name="No-of-Windows" id="direction">
-                    <option value="volvo">1</option>
-                    <option value="saab">2</option>
-                    <option value="saab">3</option>
-                    <option value="saab">4</option>
-                    <option value="saab">5</option>
+                <select name="City" id="city" onChange={(e) => {handleNoofWindows2Select(e)}}>
+                {NoOfWindowsPerWall.map((Windows) => (
+                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
@@ -127,12 +195,10 @@ const Form = () => {
                 <label htmlFor="city">Window Area</label>
                 <input type="text"  value={windowArea3} onChange={(e) => setWindowArea3(e.target.value)} />
                 <label htmlFor="city">No. of Windows</label>
-                <select name="No-of-Windows" id="direction">
-                    <option value="volvo">1</option>
-                    <option value="saab">2</option>
-                    <option value="saab">3</option>
-                    <option value="saab">4</option>
-                    <option value="saab">5</option>
+                <select name="City" id="city" onChange={(e) => {handleNoofWindows3Select(e)}}>
+                {NoOfWindowsPerWall.map((Windows) => (
+                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
@@ -141,28 +207,27 @@ const Form = () => {
                 <label htmlFor="city">Window Area</label>
                 <input type="text"  value={windowArea4} onChange={(e) => setWindowArea4(e.target.value)} />
                 <label htmlFor="city">No. of Windows</label>
-                <select name="No-of-Windows" id="direction">
-                    <option value="volvo">1</option>
-                    <option value="saab">2</option>
-                    <option value="saab">3</option>
-                    <option value="saab">4</option>
-                    <option value="saab">5</option>
+                <select name="City" id="city" onChange={(e) => {handleNoofWindows4Select(e)}}>
+                {NoOfWindowsPerWall.map((Windows) => (
+                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
                 <h3> Doors </h3>
                 <label htmlFor="city">Door Material</label>
-                <select name="Direciton" id="direction">
-                    <option value="volvo">1 Inch wood</option>
-                    <option value="volvo">2 Inch Wood</option>
-                    <option value="saab">Single Sheet Metal</option>
+                <select name="City" id="city" onChange={(e) => {handleDoorMaterialSelect(e)}}>
+                {DoorMaterials.map((DoorMaterial) => (
+                    <option key={DoorMaterial.id} value={DoorMaterial.uValue}>{DoorMaterial.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
                 <label htmlFor="city">Number of Doors</label>
-                <select name="No-of-Doors" id="direction">
-                    <option value="volvo">1</option>
-                    <option value="saab">2</option>
+                <select name="City" id="city" onChange={(e) => {handleNoOfDoorsSelect(e)}}>
+                {NoOfDoorsPerWall.map((Doors) => (
+                    <option key={Doors.id} value={Doors.name}>{Doors.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
@@ -173,36 +238,28 @@ const Form = () => {
                 <br />
                 <h3> Shading </h3>
                 <label htmlFor="city">Select Shading Type</label>
-                <select name="No-of-Doors" id="direction">
-                    <option value="volvo">Ventilation Blind</option>
-                    <option value="saab">Roller Blind</option>
+                <select name="City" id="city" onChange={(e) => {handleShadingTypeSelect(e)}}>
+                {ShadingTypes.map((ShadingType) => (
+                    <option key={ShadingType.id} value={ShadingType.uValue}>{ShadingType.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
                 <h3> Lights </h3>
                 <label htmlFor="city">Number of Lights</label>
-                <select name="No-of-Doors" id="direction">
-                <option value="volvo">1</option>
-                    <option value="saab">2</option>
-                    <option value="saab">3</option>
-                    <option value="saab">4</option>
-                    <option value="saab">5</option>
-                    <option value="volvo">6</option>
-                    <option value="saab">7</option>
-                    <option value="saab">8</option>
-                    <option value="saab">9</option>
-                    <option value="saab">10</option>
+                <select name="City" id="city" onChange={(e) => {handleNoOfLightsSelect(e)}}>
+                {NoOfLights.map((Lights) => (
+                    <option key={Lights.id} value={Lights.name}>{Lights.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
                 <h3> Occupancy </h3>
                 <label htmlFor="city">Number of People</label>
-                <select name="No-of-Doors" id="direction">
-                    <option value="volvo">10</option>
-                    <option value="saab">20</option>
-                    <option value="saab">30</option>
-                    <option value="saab">40</option>
-                    <option value="saab">50</option>
+                <select name="City" id="city" onChange={(e) => {handleNoOfPeopleSelect(e)}}>
+                {Occupancy.map((Occupants) => (
+                    <option key={Occupants.id} value={Occupants.name}>{Occupants.name}</option>
+                    ))}
                 </select>
                 <br />
                 <br />
@@ -251,57 +308,191 @@ const Cities = [
     }
 ]
 
+const WallMaterials = [
+    {
+        id: 1,
+        name: "ConcreteWall (6 Inch)",
+        uValue: 0.7
+    },
+    {
+        id: 2,
+        name: "Brick Wall (10 Inch)",
+        uValue: 0.384
+    }
+]
+
+const Directions = [
+    {
+        id: 1,
+        name: "North",
+        cltdFactor: 26
+    },
+    {
+        id: 2,
+        name: "South",
+        cltdFactor: 34
+    },
+    {
+        id: 3,
+        name: "East",
+        cltdFactor: 43
+    },
+    {
+        id: 4,
+        name: "West",
+        cltdFactor: 33
+    },
+]
+
+    
+    const WindowMaterials = [
+        {
+            id: 1,
+            name: "Double Glaze Window",
+            uValue: 0.889
+        },
+        {
+            id: 2,
+            name: "Vertical Double Glaze Window",
+            uValue: 0.06
+        },
+        {
+            id: 3,
+            name: "Horizontal Double Glaze Window",
+            uValue: 1.4
+        },
+    ]
+    
+    const NoOfWindowsPerWall = [
+        {
+            id: 1,
+            name: "1"
+        },
+        {
+            id: 2,
+            name: "2"
+        },
+        {
+            id: 3,
+            name: "3"
+        },
+        {
+            id: 4,
+            name: "4"
+        },
+        {
+            id: 5,
+            name: "5"
+        }
+    ]
 
 
+    const DoorMaterials = [
+        {
+            id: 1,
+            name: "One Inch Wood",
+            uValue: 0.65
+        },
+        {
+            id: 2,
+            name: "Two Inch Wood",
+            uValue: 0.5
+        },
+        {
+            id: 3,
+            name: "Single Sheet Metal",
+            uValue: 1.2
+        },
+    ]
+
+    const ShadingTypes = [
+        {
+            id: 1,
+            name: "Ventilation Blinds",
+            sc: 0.64
+        },
+        {
+            id: 2,
+            name: "Roller Blinds",
+            sc: 0.59
+        }
+    ]
+
+    const NoOfDoorsPerWall = [
+        {
+            id: 1,
+            name: "1"
+        },
+        {
+            id: 2,
+            name: "2"
+        }
+    ]
 
 
+    const NoOfLights = [
+        {
+            id: 1,
+            name: "1"
+        },
+        {
+            id: 2,
+            name: "2"
+        },
+        {
+            id: 3,
+            name: "3"
+        },
+        {
+            id: 4,
+            name: "4"
+        },
+        {
+            id: 5,
+            name: "5"
+        },
+        {
+            id: 6,
+            name: "6"
+        },
+        {
+            id: 7,
+            name: "7"
+        },
+        {
+            id: 8,
+            name: "8"
+        },
+        {
+            id: 9,
+            name: "9"
+        },
+        {
+            id: 10,
+            name: "10"
+        },
+    ]
 
-// let CLDT = Cities.find((City, i) => {
-//     if (City.name === 'Lahore') {
-//         return 26
-//     } else if (City.name === 'Multan') {
-//         return 28
-        
-//     } else if (City.name === 'Narowal') {
-//         return 30.5
-        
-//     } else if (City.name === 'Bahawalpur') {
-//         return 29
-        
-//     }
-// });
 
-
-
-
-
-
-
-// const [CLTD, setCLTD] = useState("26")
-
-// for (i in City) {
-//     if (City.name === City[i]) {
-//         CLDT = City.cltd
-//     }
-// }
-
-
-// const [CLTD, setCLTD] = useState({
-//     Lahore: 26,
-//     Multan: 28,
-//     Narowal: 30.5,
-//     Bahawalpur: 29
-// })
-
-// // for (const [key, value] of Object.entries(page)) {
-// //     if (value) {
-// //        console.log(key);
-// //     }
-// //   }
-
-// console.log(CLTD.);
-
-// // setResource(prevState => ({
-// //     ...prevState,
-// //     comment: "new Value",
-// // }))
+    const Occupancy = [
+        {
+            id: 1,
+            name: "10"
+        },
+        {
+            id: 2,
+            name: "20"
+        },
+        {
+            id: 3,
+            name: "30"
+        },
+        {
+            id: 4,
+            name: "40"
+        },
+        {
+            id: 5,
+            name: "50"
+        }
+    ]
