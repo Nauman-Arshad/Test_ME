@@ -2,6 +2,29 @@ import React, { useState } from 'react'
 
 
 const Form = () => {
+
+
+    const c1 = 33
+    const c2 = 0.3703
+    const c3 = 37
+    const c4 = 0.84
+    const c5 = 1.25
+    const c6 = 6
+    const c7 = 3.4
+    const c8 = 250
+    const c9 = 200
+    const c10 = 210
+    const c11 = 0.7
+    const c12 = 0.016
+    const c13 = 0.68
+    const c14 = 21
+    const c15 = 15
+    const c16 = 35
+    const c17 = 1.1
+    const c18 = 1/12000
+
+
+
     const[selectedCity, setSelectedCity] = useState("")
     const[selectedWallMaterial, setSelectedWallMaterial] = useState("")
     const[selectedDirection1, setSelectedDirection1] = useState("")
@@ -19,9 +42,6 @@ const Form = () => {
     const[noOfLights, setNoOfLights] = useState("")
     const[noOfPeople, setNoOfPeople] = useState("")
 
-
-
-
     const[width, setWidth] = useState("")
     const[breadth, setBreadth] = useState("")
     const[height, setHeight] = useState("")
@@ -35,6 +55,32 @@ const Form = () => {
     const[windowArea4, setWindowArea4] = useState("")
     const[partitionArea, setPartitionArea] = useState("")
     
+    const Volume = width * breadth * height 
+
+    const WallCalculation = (selectedWallMaterial * selectedDirection1 * wallArea1) + (selectedWallMaterial * selectedDirection2 * wallArea2) + (selectedWallMaterial * selectedDirection3 * wallArea3) + (selectedWallMaterial * selectedDirection4 * wallArea4)
+
+    const WindowCalculation = (selectedWindowMaterial * windowArea1 * noOfWindows1 * c1) + (selectedWindowMaterial * windowArea2 * noOfWindows2 * c1) + (selectedWindowMaterial * windowArea3 * noOfWindows3 * c1) + (selectedWindowMaterial * windowArea4 * noOfWindows4 * c1)
+
+    const DoorsCalculation = selectedDoorMaterial * noOfDoors * selectedCity
+
+    const PartitionCalculation = partitionArea * c2 * selectedCity
+
+    const ConductionLoad = WallCalculation + WindowCalculation + DoorsCalculation + PartitionCalculation
+
+    const RadiationLoad = selectedShadingType * c3 * WindowCalculation * c4
+
+    const ElectricLoad = noOfLights * c5 * c6 * c7 
+
+    const OccupanyLoad = (noOfPeople * c8) + (noOfPeople * c9)
+
+    const InfilterationLoad = (Volume * c10 * selectedCity * c11 * c12) + (c10 * c13 * c14)
+
+    const VentilationLoad = (noOfPeople * c15 * c16 * c17) + (noOfPeople * c15 * c14 * c13)
+
+
+    const TotalLoad =  ConductionLoad + RadiationLoad + ElectricLoad + OccupanyLoad + InfilterationLoad + VentilationLoad
+
+    const LoadInTons = TotalLoad / c18
 
 
 
@@ -88,12 +134,15 @@ const Form = () => {
     }
 
 
+    const handleCalculate = () => {
+        console.log(LoadInTons);
+    }
 
 
     return (
         <div>
             <h1>Cooling Load Calculator</h1>
-            <form>
+            <form onSubmit={handleCalculate}>
                 <label htmlFor="city">Select a City</label>
                 <select name="City" id="city" onChange={(e) => {handleCitySelect(e)}}>
                 {Cities.map((City) => (
