@@ -155,218 +155,237 @@ const Form = () => {
         <div className="container">
             <h1 className="text-uppercase display-5 pt-4" style={{ color:"#01a3a4"}}>Cooling Load Calculator</h1>
             <br/>
-            <form onSubmit={ () => null}>
-                <div className="col-6 offset-3 ">
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"
-}} htmlFor="city">Select a City</label>
-                <select className="form-select" name="City" id="city" onChange={(e) => {handleCitySelect(e)}}>
-                {Cities.map((City) => (
-                    <option key={City.id} value={City.td}>{City.name}</option>
-                    ))}
-                </select>
-                </div>
-                <br />
-                <br />
-                <div className="col-6 offset-3 card p-3 ">
-                <h3 className="display-6 text-uppercase"> Volume of Room </h3>
-                <hr class="my-4"/>
-                <div className=" mb-3">
-                <label className="form-label col-12" style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}} htmlFor="city">Width</label>
-                <input  className="form-control" type="text"  value={width} onChange={(e) => setWidth(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                <label  className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}} htmlFor="city">Breadth</label>
-                <input  className="form-control" type="text"  value={breadth} onChange={(e) => setBreadth(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                <label className="form-label col-12" style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}} htmlFor="city">Height</label>
-                <input  className="form-control"type="text"  value={height} onChange={(e) => setHeight(e.target.value)} />
-                </div>
-                </div>
-                <div className="col-6 offset-3 card p-3 mt-4">
-                <h3 className="display-6 text-uppercase"> Walls </h3>
-                <hr class="my-4"/>
-                <div> <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"
-                }} htmlFor="city">Wall Material</label>
-                <select className="form-select" name="City" id="city" onChange={(e) => {handleWallMaterialSelect(e)}}>
-                {WallMaterials.map((WallMaterial) => (
-                    <option key={WallMaterial.id} value={WallMaterial.uValue}>{WallMaterial.name}</option>
-                    ))}
-                </select>
-                </div>
-                <div>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Select a Direction</label>
-                <select className="form-select" name="City" id="city" onChange={(e) => {handleDirection1Select(e)}}>
-                {Directions.map((Direction) => (
-                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
-                    ))}
-                </select>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Wall Area</label>
-                <input  className="form-control"type="text"  value={wallArea1} onChange={(e) => setWallArea1(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Select a Direction</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleDirection2Select(e)}}>
-                {Directions.map((Direction) => (
-                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
-                    ))}
-                </select>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Wall Area</label>
-                <input  className="form-control"type="text"  value={wallArea2} onChange={(e) => setWallArea2(e.target.value)} />
-                </div>
+            <div className="col-12 row  ">
+                <div className='col-2 offset-1'><p className='text-dark text-start'>2019-ME-75</p></div>
+                <div className='col-2 offset-1'><p className='text-derk text-start'>2019-ME-76</p></div>
+                <div className='col-2 offset-1'><p className='text-dark text-start'>2019-ME-77</p></div>
+                <div className='col-2 offset-1'><p className='text-dark text-start'>2019-ME-78</p></div>
+            </div>
 
-                <div className="mb-3">
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Select a Direction</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleDirection3Select(e)}}>
-                {Directions.map((Direction) => (
-                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
-                    ))}
-                </select>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Wall Area</label>
-                <input  className="form-control"type="text"  value={wallArea3} onChange={(e) => setWallArea3(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Select a Direction</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleDirection4Select(e)}}>
-                {Directions.map((Direction) => (
-                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
-                    ))}
-                </select>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Wall Area</label>
-                <input  className="form-control"type="text"  value={wallArea4} onChange={(e) => setWallArea4(e.target.value)} />
-                </div>
-                </div>
-                <div className="col-6 offset-3 card p-3 mt-3">
-                <h3 className="display-6 text-uppercase"> Windows </h3>
-                <hr class="my-4"/>
-                <div>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Window Material</label>
-                <select  className="form-select"name="City" id="city" onChange={(e) => {handleWindowMaterialSelect(e)}}>
-                {WindowMaterials.map((WindowMaterial) => (
-                    <option key={WindowMaterial.id} value={WindowMaterial.uValue}>{WindowMaterial.name}</option>
-                    ))}
-                </select>
-                </div>
-                <hr class="my-4"/>
-                <div>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">North Wall</label>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Window Area</label>
-                <input  className="form-control"type="text"  value={windowArea1} onChange={(e) => setWindowArea1(e.target.value)} />
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">No. of Windows</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleNoofWindows1Select(e)}}>
-                {NoOfWindowsPerWall.map((Windows) => (
-                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
-                    ))}
-                </select>
-                </div>
-                <div className="mt-3 mb-3">
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">South Wall</label>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Window Area</label>
-                <input  className="form-control"type="text"  value={windowArea2} onChange={(e) => setWindowArea2(e.target.value)} />
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">No. of Windows</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleNoofWindows2Select(e)}}>
-                {NoOfWindowsPerWall.map((Windows) => (
-                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
-                    ))}
-                </select>
-                </div>
-                <div className="mt-3 mb-3">
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">East Wall</label>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Window Area</label>
-                <input  className="form-control"type="text"  value={windowArea2} onChange={(e) => setWindowArea2(e.target.value)} />
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">No. of Windows</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleNoofWindows2Select(e)}}>
-                {NoOfWindowsPerWall.map((Windows) => (
-                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
-                    ))}
-                </select>
-                </div>
-                <div className="mt-3 mb-3">
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Waste Wall</label>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Window Area</label>
-                <input  className="form-control"type="text"  value={windowArea2} onChange={(e) => setWindowArea2(e.target.value)} />
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">No. of Windows</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleNoofWindows2Select(e)}}>
-                {NoOfWindowsPerWall.map((Windows) => (
-                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
-                    ))}
-                </select>
-                </div>
-                </div>
-                <div className="col-6 offset-3 card p-3 mt-4">
-                <h3 className="text-uppercase display-6"> Doors </h3>
-                <hr class="my-4"/>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Door Material</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleDoorMaterialSelect(e)}}>
-                {DoorMaterials.map((DoorMaterial) => (
-                    <option key={DoorMaterial.id} value={DoorMaterial.uValue}>{DoorMaterial.name}</option>
-                    ))}
-                </select>
-                <br />
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Number of Doors</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleNoOfDoorsSelect(e)}}>
-                {NoOfDoorsPerWall.map((Doors) => (
-                    <option key={Doors.id} value={Doors.name}>{Doors.name}</option>
-                    ))}
-                </select>
-                </div>
-                <br />
-                <div className="col-12 row">
-                <div className="col-3 ">
-                 <div className="card ">
-                <h4 className="text-captalize"> Partitions </h4>
-                <hr class="my-2"/>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Partition Area</label>
-                <input  className="form-control"type="text"  value={partitionArea} onChange={(e) => setPartitionArea(e.target.value)} />
-                </div>
-                </div>
-                <div className="col-3">
-                    <div className="card">
-                <h4 className=" text-captalize"> Shading </h4>
-                <hr class="my-2"/>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Select Shading Type</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleShadingTypeSelect(e)}}>
-                {ShadingTypes.map((ShadingType) => (
-                    <option key={ShadingType.id} value={ShadingType.uValue}>{ShadingType.name}</option>
-                    ))}
-                </select>
-                </div>
-                </div>
-              <div className="col-3 ">
-                  <div className="card ">
-                <h4 className=" text-captalize"> Lights </h4>
-                <hr class="my-2"/>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Number of Lights</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleNoOfLightsSelect(e)}}>
-                {NoOfLights.map((Lights) => (
-                    <option key={Lights.id} value={Lights.name}>{Lights.name}</option>
-                    ))}
-                </select>
-                </div>
-              </div>
-              <div className="col-3">
-                  <div className="card ">
-                <h4 className=" text-captalize"> Occupancy </h4>
-                <hr class="my-2"/>
-                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Number of People</label>
-                <select className="form-select"name="City" id="city" onChange={(e) => {handleNoOfPeopleSelect(e)}}>
-                {Occupancy.map((Occupants) => (
-                    <option key={Occupants.id} value={Occupants.name}>{Occupants.name}</option>
-                    ))}
-                </select>
-                </div>
-              </div>
-              </div>
-              <div className="mt-3">
-                <button className="btn btn-success" onClick={handleCalculate}>Calculate</button>
-            {
-                calculatedResult !== "" &&
-                <div  className=" bg-success card" style={{ width:'18rem', minHeight: '8rem',textAlign:'center',justifyContent:"center",color:"white",fontSize:'20px'}}>{calculatedResult}</div>
+            { calculatedResult == '' &&
+                <form onSubmit={ () => null}>
+                    <div className="col-6 offset-3 ">
+                        <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"
+                        }} htmlFor="city">Select a City</label>
+                        <select className="form-select" name="City" id="city" onChange={(e) => {handleCitySelect(e)}}>
+                            {Cities.map((City) => (
+                                <option key={City.id} value={City.td}>{City.name}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <br />
+                    <br />
+                    <div className="col-6 offset-3 card p-3 ">
+                        <h3 className="display-6 text-uppercase"> Volume of Room </h3>
+                        <hr className="my-4"/>
+                        <div className=" mb-3">
+                            <label className="form-label col-12" style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}} htmlFor="city">Width</label>
+                            <input  className="form-control" type="text"  value={width} onChange={(e) => setWidth(e.target.value)} />
+                        </div>
+                        <div className="mb-3">
+                            <label  className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}} htmlFor="city">Breadth</label>
+                            <input  className="form-control" type="text"  value={breadth} onChange={(e) => setBreadth(e.target.value)} />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label col-12" style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}} htmlFor="city">Height</label>
+                            <input  className="form-control"type="text"  value={height} onChange={(e) => setHeight(e.target.value)} />
+                        </div>
+                    </div>
+                    <div className="col-6 offset-3 card p-3 mt-4">
+                        <h3 className="display-6 text-uppercase"> Walls </h3>
+                        <hr className="my-4"/>
+                        <div> <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"
+                        }} htmlFor="city">Wall Material</label>
+                            <select className="form-select" name="City" id="city" onChange={(e) => {handleWallMaterialSelect(e)}}>
+                                {WallMaterials.map((WallMaterial) => (
+                                    <option key={WallMaterial.id} value={WallMaterial.uValue}>{WallMaterial.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Select a Direction</label>
+                            <select className="form-select" name="City" id="city" onChange={(e) => {handleDirection1Select(e)}}>
+                                {Directions.map((Direction) => (
+                                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
+                                ))}
+                            </select>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Wall Area</label>
+                            <input  className="form-control"type="text"  value={wallArea1} onChange={(e) => setWallArea1(e.target.value)} />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Select a Direction</label>
+                            <select className="form-select"name="City" id="city" onChange={(e) => {handleDirection2Select(e)}}>
+                                {Directions.map((Direction) => (
+                                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
+                                ))}
+                            </select>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Wall Area</label>
+                            <input  className="form-control"type="text"  value={wallArea2} onChange={(e) => setWallArea2(e.target.value)} />
+                        </div>
+
+                        <div className="mb-3">
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Select a Direction</label>
+                            <select className="form-select"name="City" id="city" onChange={(e) => {handleDirection3Select(e)}}>
+                                {Directions.map((Direction) => (
+                                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
+                                ))}
+                            </select>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Wall Area</label>
+                            <input  className="form-control"type="text"  value={wallArea3} onChange={(e) => setWallArea3(e.target.value)} />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Select a Direction</label>
+                            <select className="form-select"name="City" id="city" onChange={(e) => {handleDirection4Select(e)}}>
+                                {Directions.map((Direction) => (
+                                    <option key={Direction.id} value={Direction.cltdFactor}>{Direction.name}</option>
+                                ))}
+                            </select>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Wall Area</label>
+                            <input  className="form-control"type="text"  value={wallArea4} onChange={(e) => setWallArea4(e.target.value)} />
+                        </div>
+                    </div>
+                    <div className="col-6 offset-3 card p-3 mt-3">
+                        <h3 className="display-6 text-uppercase"> Windows </h3>
+                        <hr className="my-4"/>
+                        <div>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Window Material</label>
+                            <select  className="form-select"name="City" id="city" onChange={(e) => {handleWindowMaterialSelect(e)}}>
+                                {WindowMaterials.map((WindowMaterial) => (
+                                    <option key={WindowMaterial.id} value={WindowMaterial.uValue}>{WindowMaterial.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <hr className="my-4"/>
+                        <div>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">North Wall</label>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Window Area</label>
+                            <input  className="form-control"type="text"  value={windowArea1} onChange={(e) => setWindowArea1(e.target.value)} />
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">No. of Windows</label>
+                            <select className="form-select"name="City" id="city" onChange={(e) => {handleNoofWindows1Select(e)}}>
+                                {NoOfWindowsPerWall.map((Windows) => (
+                                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="mt-3 mb-3">
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">South Wall</label>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Window Area</label>
+                            <input  className="form-control"type="text"  value={windowArea2} onChange={(e) => setWindowArea2(e.target.value)} />
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">No. of Windows</label>
+                            <select className="form-select"name="City" id="city" onChange={(e) => {handleNoofWindows2Select(e)}}>
+                                {NoOfWindowsPerWall.map((Windows) => (
+                                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="mt-3 mb-3">
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">East Wall</label>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Window Area</label>
+                            <input  className="form-control"type="text"  value={windowArea2} onChange={(e) => setWindowArea2(e.target.value)} />
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">No. of Windows</label>
+                            <select className="form-select"name="City" id="city" onChange={(e) => {handleNoofWindows2Select(e)}}>
+                                {NoOfWindowsPerWall.map((Windows) => (
+                                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="mt-3 mb-3">
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Waste Wall</label>
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Window Area</label>
+                            <input  className="form-control"type="text"  value={windowArea2} onChange={(e) => setWindowArea2(e.target.value)} />
+                            <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">No. of Windows</label>
+                            <select className="form-select"name="City" id="city" onChange={(e) => {handleNoofWindows2Select(e)}}>
+                                {NoOfWindowsPerWall.map((Windows) => (
+                                    <option key={Windows.id} value={Windows.name}>{Windows.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+                    <div className="col-6 offset-3 card p-3 mt-4">
+                        <h3 className="text-uppercase display-6"> Doors </h3>
+                        <hr className="my-4"/>
+                        <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Door Material</label>
+                        <select className="form-select"name="City" id="city" onChange={(e) => {handleDoorMaterialSelect(e)}}>
+                            {DoorMaterials.map((DoorMaterial) => (
+                                <option key={DoorMaterial.id} value={DoorMaterial.uValue}>{DoorMaterial.name}</option>
+                            ))}
+                        </select>
+                        <br />
+                        <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Number of Doors</label>
+                        <select className="form-select"name="City" id="city" onChange={(e) => {handleNoOfDoorsSelect(e)}}>
+                            {NoOfDoorsPerWall.map((Doors) => (
+                                <option key={Doors.id} value={Doors.name}>{Doors.name}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <br />
+                    <div className="col-12 row">
+                        <div className="col-3 ">
+                            <div className="card ">
+                                <h4 className="text-captalize"> Partitions </h4>
+                                <hr className="my-2"/>
+                                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Partition Area</label>
+                                <input  className="form-control"type="text"  value={partitionArea} onChange={(e) => setPartitionArea(e.target.value)} />
+                            </div>
+                        </div>
+                        <div className="col-3">
+                            <div className="card">
+                                <h4 className=" text-captalize"> Shading </h4>
+                                <hr className="my-2"/>
+                                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Select Shading Type</label>
+                                <select className="form-select"name="City" id="city" onChange={(e) => {handleShadingTypeSelect(e)}}>
+                                    {ShadingTypes.map((ShadingType) => (
+                                        <option key={ShadingType.id} value={ShadingType.uValue}>{ShadingType.name}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                        <div className="col-3 ">
+                            <div className="card ">
+                                <h4 className=" text-captalize"> Lights </h4>
+                                <hr className="my-2"/>
+                                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Number of Lights</label>
+                                <select className="form-select"name="City" id="city" onChange={(e) => {handleNoOfLightsSelect(e)}}>
+                                    {NoOfLights.map((Lights) => (
+                                        <option key={Lights.id} value={Lights.name}>{Lights.name}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                        <div className="col-3">
+                            <div className="card ">
+                                <h4 className=" text-captalize"> Occupancy </h4>
+                                <hr className="my-2"/>
+                                <label className="form-label col-12 " style={{justifyContent:'left', textAlign:'left',  fontFamily: "Times New Roman"}}htmlFor="city">Number of People</label>
+                                <select className="form-select"name="City" id="city" onChange={(e) => {handleNoOfPeopleSelect(e)}}>
+                                    {Occupancy.map((Occupants) => (
+                                        <option key={Occupants.id} value={Occupants.name}>{Occupants.name}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mt-3">
+                        <button className="btn btn-success" onClick={handleCalculate}>Calculate</button>
+                    </div>
+                    <br />
+                </form>
             }
-                </div>
-                <br />
-            </form>
 
+
+            <div className='mt-3'>
+                {
+                    calculatedResult !== "" &&
+                    <>
+                        <div className=" bg-success card w-100" style={{ width:'18rem', minHeight: '8rem',textAlign:'center',justifyContent:"center",color:"white",fontSize:'20px'}}>{calculatedResult} ton</div>
+                        <br/>
+                        <button className="btn btn-warning" onClick={()=> setCalculatedResult('')}>ReCalculate</button>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </>
+                }
+            </div>
 
         </div>
     )
@@ -442,154 +461,154 @@ const Directions = [
 ]
 
 
-    const WindowMaterials = [
-        {
-            id: 1,
-            name: "Double Glaze Window",
-            uValue: 0.889
-        },
-        {
-            id: 2,
-            name: "Vertical Double Glaze Window",
-            uValue: 0.06
-        },
-        {
-            id: 3,
-            name: "Horizontal Double Glaze Window",
-            uValue: 1.4
-        },
-    ]
+const WindowMaterials = [
+    {
+        id: 1,
+        name: "Double Glaze Window",
+        uValue: 0.889
+    },
+    {
+        id: 2,
+        name: "Vertical Double Glaze Window",
+        uValue: 0.06
+    },
+    {
+        id: 3,
+        name: "Horizontal Double Glaze Window",
+        uValue: 1.4
+    },
+]
 
-    const NoOfWindowsPerWall = [
-        {
-            id: 1,
-            name: "1"
-        },
-        {
-            id: 2,
-            name: "2"
-        },
-        {
-            id: 3,
-            name: "3"
-        },
-        {
-            id: 4,
-            name: "4"
-        },
-        {
-            id: 5,
-            name: "5"
-        }
-    ]
-
-
-    const DoorMaterials = [
-        {
-            id: 1,
-            name: "One Inch Wood",
-            uValue: 0.65
-        },
-        {
-            id: 2,
-            name: "Two Inch Wood",
-            uValue: 0.5
-        },
-        {
-            id: 3,
-            name: "Single Sheet Metal",
-            uValue: 1.2
-        },
-    ]
-
-    const ShadingTypes = [
-        {
-            id: 1,
-            name: "Ventilation Blinds",
-            sc: 0.64
-        },
-        {
-            id: 2,
-            name: "Roller Blinds",
-            sc: 0.59
-        }
-    ]
-
-    const NoOfDoorsPerWall = [
-        {
-            id: 1,
-            name: "1"
-        },
-        {
-            id: 2,
-            name: "2"
-        }
-    ]
+const NoOfWindowsPerWall = [
+    {
+        id: 1,
+        name: "1"
+    },
+    {
+        id: 2,
+        name: "2"
+    },
+    {
+        id: 3,
+        name: "3"
+    },
+    {
+        id: 4,
+        name: "4"
+    },
+    {
+        id: 5,
+        name: "5"
+    }
+]
 
 
-    const NoOfLights = [
-        {
-            id: 1,
-            name: "1"
-        },
-        {
-            id: 2,
-            name: "2"
-        },
-        {
-            id: 3,
-            name: "3"
-        },
-        {
-            id: 4,
-            name: "4"
-        },
-        {
-            id: 5,
-            name: "5"
-        },
-        {
-            id: 6,
-            name: "6"
-        },
-        {
-            id: 7,
-            name: "7"
-        },
-        {
-            id: 8,
-            name: "8"
-        },
-        {
-            id: 9,
-            name: "9"
-        },
-        {
-            id: 10,
-            name: "10"
-        },
-    ]
+const DoorMaterials = [
+    {
+        id: 1,
+        name: "One Inch Wood",
+        uValue: 0.65
+    },
+    {
+        id: 2,
+        name: "Two Inch Wood",
+        uValue: 0.5
+    },
+    {
+        id: 3,
+        name: "Single Sheet Metal",
+        uValue: 1.2
+    },
+]
+
+const ShadingTypes = [
+    {
+        id: 1,
+        name: "Ventilation Blinds",
+        sc: 0.64
+    },
+    {
+        id: 2,
+        name: "Roller Blinds",
+        sc: 0.59
+    }
+]
+
+const NoOfDoorsPerWall = [
+    {
+        id: 1,
+        name: "1"
+    },
+    {
+        id: 2,
+        name: "2"
+    }
+]
 
 
-    const Occupancy = [
-        {
-            id: 1,
-            name: "10"
-        },
-        {
-            id: 2,
-            name: "20"
-        },
-        {
-            id: 3,
-            name: "30"
-        },
-        {
-            id: 4,
-            name: "40"
-        },
-        {
-            id: 5,
-            name: "50"
-        }
-    ]
+const NoOfLights = [
+    {
+        id: 1,
+        name: "1"
+    },
+    {
+        id: 2,
+        name: "2"
+    },
+    {
+        id: 3,
+        name: "3"
+    },
+    {
+        id: 4,
+        name: "4"
+    },
+    {
+        id: 5,
+        name: "5"
+    },
+    {
+        id: 6,
+        name: "6"
+    },
+    {
+        id: 7,
+        name: "7"
+    },
+    {
+        id: 8,
+        name: "8"
+    },
+    {
+        id: 9,
+        name: "9"
+    },
+    {
+        id: 10,
+        name: "10"
+    },
+]
+
+
+const Occupancy = [
+    {
+        id: 1,
+        name: "10"
+    },
+    {
+        id: 2,
+        name: "20"
+    },
+    {
+        id: 3,
+        name: "30"
+    },
+    {
+        id: 4,
+        name: "40"
+    },
+    {
+        id: 5,
+        name: "50"
+    }
+]
